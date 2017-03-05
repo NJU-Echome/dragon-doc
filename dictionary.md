@@ -18,6 +18,7 @@
 | 技师 | Technician |
 | 普通用户 | User |
 | 积分 | Point |
+| 地址 | Address |
 
 ## 公共
 
@@ -27,9 +28,6 @@
 | 图片(照片) | Image |
 | 封面 | Cover |
 | 详情 | Detail |
-| 地址 | Address |
-| 经度 | Longitude |
-| 纬度 | Latitude |
 | 值 | Value |
 | 列表 | List |
 | 数量 | Count |
@@ -40,7 +38,18 @@
 | 可用 | Enable |
 | 类型 | Type |
 
+## 地址
+
+| 中文 | 英文 |
+|------|------|
+| 省 | Province |
+| 市 | City |
+| 县(区) | District |
+| 经度 | Longitude |
+| 纬度 | Latitude |
+
 ## 门店
+
 | 中文 | 英文 |
 |------|------|
 | 开店时间 | Open Time |
@@ -48,6 +57,7 @@
 | 联系电话 | Contact Number |
 
 ## 商品
+
 | 中文 | 英文 |
 |------|------|
 | 原价 | Original Price |
@@ -57,7 +67,7 @@
 | 开始时间 | Start Time |
 | 结束时间 | End Time |
 
-# 文章
+## 文章
 
 | 中文 | 英文 |
 |------|------|
@@ -67,7 +77,7 @@
 | 阅读 | Read |
 | 点赞 | Praise |
 
-# 用户
+## 用户
 
 | 中文 | 英文 |
 |------|------|
@@ -79,6 +89,16 @@
 | 性别 | Gender |
 
 ## 技师
+
 | 中文 | 英文 |
 |------|------|
 | 职位 | Position |
+
+## 车辆
+
+| 中文 | 英文 |
+|------|------|
+| 品牌 | Brand |
+| 车系 | Series |
+| 车型 | Model |
+| 生产年份 | Production Year |
