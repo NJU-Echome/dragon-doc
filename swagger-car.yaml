@@ -20,29 +20,90 @@ paths:
       summary: 门店列表
       description: 门店列表
       parameters:
-        - name: course_id
+        - name: city
           in: query
-          type: integer
-          format: int32
-          description: 课程id
+          type: string
+          format: string
+          description: 城市名
           required: true
+        - name: district
+          in: query
+          type: string
+          description: 区名
+          required: false
+        - name: tags
+          in: query
+          type: string
+          description: 标签列表,用英文逗号隔开
+          required: false
+        - name: limit
+          in: query
+          type: string
+          format: int32
+          description: 返回的数量,默认5
+        - name: offset
+          in: query
+          type: string
+          format: int32
+          description: 偏移量,默认0
       tags:
         - Store
       responses:
         200:
           description: 门店列表
           schema:
-            $ref: '#/definitions/ShoppingList'
+            $ref: '#/definitions/StoreList'
 definitions:
-  ShoppingList:
+  StoreSimple:
     type: object
-    description: 买断商品列表
+    description: 门店简介
     properties:
-      question_count:
+      id:
+        type: integer
+      name:
+        type: string
+        description: 名称
+      address:
+        type: string
+        description: 完整地址
+      latitude:
+        type: number
+        format: double
+        description: 纬度
+      longitude:
+        type: number
+        format: double
+        description: 经度
+      tags:
+        type: array
+        description: 标签列表
+        items:
+          $ref: '#/definitions/Tag'
+  Tag:
+    type: object
+    description: 标签
+    properties:
+      id: 
+        type: integer
+      name:
+        type: string        
+  StoreList:
+    type: object
+    description: 门店列表
+    properties:
+      offset:
         type: integer
         format: int32
         description: 提问次数
-      price:
+      limit:
         type: integer
         format: int32
         description: 现价
+      count:
+        type: integer
+        format: int32
+        description: 总数量
+      list:
+        type: array
+        items: 
+          $ref: '#/definitions/StoreSimple'
