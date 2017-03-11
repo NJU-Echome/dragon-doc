@@ -18,7 +18,7 @@ paths:
    /store:
     get:
       summary: 门店列表
-      description: 门店列表
+      description: 门店列表，客户端计算距离并排序，所以不能分页（因为是限制在一个城市的，所以门店也不会太多）
       parameters:
         - name: city
           in: query
@@ -34,18 +34,8 @@ paths:
         - name: tagIds
           in: query
           type: string
-          description: 标签列表,用英文逗号隔开
+          description: 标签Id列表,用英文逗号隔开
           required: false
-        - name: limit
-          in: query
-          type: string
-          format: int32
-          description: 返回的数量,默认5
-        - name: offset
-          in: query
-          type: string
-          format: int32
-          description: 偏移量,默认0
       tags:
         - Store
       responses:
