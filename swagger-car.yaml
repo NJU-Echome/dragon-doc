@@ -42,7 +42,9 @@ paths:
         200:
           description: 门店列表
           schema:
-            $ref: '#/definitions/StoreList'
+            type: array
+            items: 
+              $ref: '#/definitions/StoreSimple'
 definitions:
   StoreSimple:
     type: object
@@ -76,24 +78,4 @@ definitions:
       id: 
         type: integer
       name:
-        type: string        
-  StoreList:
-    type: object
-    description: 门店列表
-    properties:
-      offset:
-        type: integer
-        format: int32
-        description: 提问次数
-      limit:
-        type: integer
-        format: int32
-        description: 现价
-      count:
-        type: integer
-        format: int32
-        description: 总数量
-      list:
-        type: array
-        items: 
-          $ref: '#/definitions/StoreSimple'
+        type: string
